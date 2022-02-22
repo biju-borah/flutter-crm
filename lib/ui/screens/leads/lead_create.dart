@@ -142,7 +142,7 @@ class _CreateLeadState extends State<CreateLead> {
                     child: MultiSelectFormField(
                       border: boxBorder(),
                       fillColor: Colors.white,
-                      autovalidate: false,
+                      autovalidate: AutovalidateMode.disabled,
                       dataSource: contactBloc.teamsObjForDropdown,
                       textField: 'name',
                       valueField: 'id',
@@ -192,7 +192,7 @@ class _CreateLeadState extends State<CreateLead> {
                     child: MultiSelectFormField(
                       border: boxBorder(),
                       fillColor: Colors.white,
-                      autovalidate: false,
+                      autovalidate: AutovalidateMode.disabled,
                       dataSource: leadBloc.usersObjForDropdown,
                       textField: 'name',
                       valueField: 'id',
@@ -242,7 +242,7 @@ class _CreateLeadState extends State<CreateLead> {
                     child: MultiSelectFormField(
                       border: boxBorder(),
                       fillColor: Colors.white,
-                      autovalidate: false,
+                      autovalidate: AutovalidateMode.disabled,
                       dataSource: leadBloc.usersObjForDropdown,
                       textField: 'name',
                       valueField: 'id',

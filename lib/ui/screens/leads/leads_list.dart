@@ -39,7 +39,7 @@ class _LeadsListState extends State<LeadsList> {
       child: MultiSelectFormField(
         border: boxBorder(),
         fillColor: Colors.white,
-        autovalidate: false,
+        autovalidate: AutovalidateMode.disabled,
         dataSource: data,
         textField: 'name',
         valueField: 'id',
@@ -502,39 +502,39 @@ class _LeadsListState extends State<LeadsList> {
 
   void showDeleteLeadAlertDialog(BuildContext context, Lead lead, index) {
     showDialog(
-        context: context,
-        child: CupertinoAlertDialog(
-          title: Text(
-            lead.title,
-            style: GoogleFonts.robotoSlab(
-                color: Theme.of(context).secondaryHeaderColor),
-          ),
-          content: Text(
-            "Are you sure you want to delete this account?",
-            style: GoogleFonts.robotoSlab(fontSize: 15.0),
-          ),
-          actions: <Widget>[
-            CupertinoDialogAction(
-                isDefaultAction: true,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  "Cancel",
-                  style: GoogleFonts.robotoSlab(),
-                )),
-            CupertinoDialogAction(
-                textStyle: TextStyle(color: Colors.red),
-                isDefaultAction: true,
-                onPressed: () async {
-                  deleteAccount(index, lead);
-                },
-                child: Text(
-                  "Delete",
-                  style: GoogleFonts.robotoSlab(),
-                )),
-          ],
-        ));
+        builder: (context) => CupertinoAlertDialog(
+              title: Text(
+                lead.title,
+                style: GoogleFonts.robotoSlab(
+                    color: Theme.of(context).secondaryHeaderColor),
+              ),
+              content: Text(
+                "Are you sure you want to delete this account?",
+                style: GoogleFonts.robotoSlab(fontSize: 15.0),
+              ),
+              actions: <Widget>[
+                CupertinoDialogAction(
+                    isDefaultAction: true,
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      "Cancel",
+                      style: GoogleFonts.robotoSlab(),
+                    )),
+                CupertinoDialogAction(
+                    textStyle: TextStyle(color: Colors.red),
+                    isDefaultAction: true,
+                    onPressed: () async {
+                      deleteAccount(index, lead);
+                    },
+                    child: Text(
+                      "Delete",
+                      style: GoogleFonts.robotoSlab(),
+                    )),
+              ],
+            ),
+        context: context);
   }
 
   deleteAccount(index, account) {

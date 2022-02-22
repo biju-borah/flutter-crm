@@ -629,7 +629,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     child: MultiSelectFormField(
                       border: boxBorder(),
                       fillColor: Colors.white,
-                      autovalidate: false,
+                      autovalidate: AutovalidateMode.disabled,
                       validator: (value) {
                         if (value == null || value.length == 0) {
                           return 'Please select one or more options';
@@ -686,7 +686,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     child: MultiSelectFormField(
                       border: boxBorder(),
                       fillColor: Colors.white,
-                      autovalidate: false,
+                      autovalidate: AutovalidateMode.disabled,
                       dataSource: contactBloc.teamsObjForDropdown,
                       textField: 'name',
                       valueField: 'id',
@@ -736,7 +736,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     child: MultiSelectFormField(
                       border: boxBorder(),
                       fillColor: Colors.white,
-                      autovalidate: false,
+                      autovalidate: AutovalidateMode.disabled,
                       dataSource: leadBloc.usersObjForDropdown,
                       textField: 'name',
                       valueField: 'id',
@@ -786,7 +786,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     child: MultiSelectFormField(
                       border: boxBorder(),
                       fillColor: Colors.white,
-                      autovalidate: false,
+                      autovalidate: AutovalidateMode.disabled,
                       dataSource: leadBloc.usersObjForDropdown,
                       textField: 'name',
                       valueField: 'id',

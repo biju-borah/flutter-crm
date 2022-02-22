@@ -35,7 +35,7 @@ class _CreateContactState extends State<CreateContact> {
       child: MultiSelectFormField(
         border: boxBorder(),
         fillColor: Colors.white,
-        autovalidate: false,
+        autovalidate: AutovalidateMode.disabled,
         dataSource: data,
         textField: 'name',
         valueField: 'id',
