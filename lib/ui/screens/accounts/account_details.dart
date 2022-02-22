@@ -44,39 +44,39 @@ class _AccountDetailsState extends State<AccountDetails> {
 
   void showDeleteAccountAlertDialog(BuildContext context) {
     showDialog(
-        context: context,
-        child: CupertinoAlertDialog(
-          title: Text(
-            accountBloc.currentAccount.name,
-            style: GoogleFonts.robotoSlab(
-                color: Theme.of(context).secondaryHeaderColor),
-          ),
-          content: Text(
-            "Are you sure you want to delete this account?",
-            style: GoogleFonts.robotoSlab(fontSize: 15.0),
-          ),
-          actions: <Widget>[
-            CupertinoDialogAction(
-                isDefaultAction: true,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  "Cancel",
-                  style: GoogleFonts.robotoSlab(),
-                )),
-            CupertinoDialogAction(
-                textStyle: TextStyle(color: Colors.red),
-                isDefaultAction: true,
-                onPressed: () async {
-                  deleteAccount();
-                },
-                child: Text(
-                  "Delete",
-                  style: GoogleFonts.robotoSlab(),
-                )),
-          ],
-        ));
+        builder: (context) => CupertinoAlertDialog(
+              title: Text(
+                accountBloc.currentAccount.name,
+                style: GoogleFonts.robotoSlab(
+                    color: Theme.of(context).secondaryHeaderColor),
+              ),
+              content: Text(
+                "Are you sure you want to delete this account?",
+                style: GoogleFonts.robotoSlab(fontSize: 15.0),
+              ),
+              actions: <Widget>[
+                CupertinoDialogAction(
+                    isDefaultAction: true,
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      "Cancel",
+                      style: GoogleFonts.robotoSlab(),
+                    )),
+                CupertinoDialogAction(
+                    textStyle: TextStyle(color: Colors.red),
+                    isDefaultAction: true,
+                    onPressed: () async {
+                      deleteAccount();
+                    },
+                    child: Text(
+                      "Delete",
+                      style: GoogleFonts.robotoSlab(),
+                    )),
+              ],
+            ),
+        context: context);
   }
 
   deleteAccount() {
