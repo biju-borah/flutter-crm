@@ -30,17 +30,18 @@ class _SplashScreenState extends State<SplashScreen> {
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.mobile ||
         connectivityResult == ConnectivityResult.wifi) {
-      if (preferences.getString('authToken') != null &&
-          preferences.getString('authToken') != "") {
-        await authBloc.getProfileDetails();
-        await dashboardBloc.fetchDashboardDetails();
-        await accountBloc.fetchAccounts();
-        await leadBloc.fetchLeads();
-        await contactBloc.fetchContacts();
-        Navigator.pushReplacementNamed(context, '/dashboard');
-      } else {
-        Navigator.pushReplacementNamed(context, '/sub_domain');
-      }
+      Navigator.pushReplacementNamed(context, '/dashboard');
+      // if (preferences.getString('authToken') != null &&
+      //     preferences.getString('authToken') != "") {
+      //   await authBloc.getProfileDetails();
+      //   await dashboardBloc.fetchDashboardDetails();
+      //   await accountBloc.fetchAccounts();
+      //   await leadBloc.fetchLeads();
+      //   await contactBloc.fetchContacts();
+      //   Navigator.pushReplacementNamed(context, '/dashboard');
+      // } else {
+      //   Navigator.pushReplacementNamed(context, '/sub_domain');
+      // }
     } else {
       showNoInternet(context, 'No internet connection!');
     }
